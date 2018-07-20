@@ -1,18 +1,25 @@
 <div class='flex-container flex-center'>
-  <div id='calendar-container' class='flex-container flex-column'>
-    <div class=' flex-container flex-center-horizontal calendar-header'>
-      <div class='fa fa-chevron-left left-arrow'></div>
-      <div>{{date.format('MMMM')}} {{date.format('YYYY')}}</div>
-      <div class='fa fa-chevron-right right-arrow'></div>
+  <div id='main-container' class='flex-container flex-column'>
+    <div class="form">
+      <input type="text" name='dateFrom' placeholder='Start Date' #startDate>
+      <div class="width-5"></div>
+      <input type="number" placeholder='To Date' name='Number of Days' #numberOfDays>
+      <div class="width-5"></div>
+      <button class='primary' (click)='generateCalendar(startDate, numberOfDays)'>Reserve</button>
     </div>
-    <div class='flex-container'>
+    <div *ngIf="months?.length > 0" class='flex-container'>
       <div *ngFor="let wday of wdays">
-        <div class='calendar-day flex-container flex-center'>{{wday}}</div>
+        <div class='calendar-header flex-container flex-center'>{{wday}}</div>
       </div>
     </div>
-    <div class='flex-container flex-wrap'>
-      <div *ngFor="let day of days">
-        <div class='calendar-day flex-container flex-center' [ngClass]="{'inactiveDay ': !day, 'weekend': isWeekend(day?.day())}">{{day?.day()}}</div>
+    <div id='calendar-container' *ngFor="let month of months">
+      <div class=' flex-container flex-center-horizontal calendar-navigator'>
+        <div>{{month.name}}</div>
+      </div>
+      <div class='flex-container flex-wrap'>
+        <div *ngFor="let day of month.days">
+          <div class='calendar-day flex-container flex-center' [ngClass]="{'inactiveDay ': !day, 'weekend': isWeekend(day?.day())}">{{day?.date()}}</div>
+        </div>
       </div>
     </div>
   </div>
