@@ -1,1 +1,34 @@
 /* You can add global styles to this file, and also import other style files */
+.flex-container {
+  display: -webkit-flex;
+  display: flex;
+}
+
+.flex-center {
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-column {
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+
+.flex-center-horizontal {
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.left-arrow{
+  margin-right: 15px;
+}
+
+.right-arrow{
+  margin-left: 15px;
+}
