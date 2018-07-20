@@ -1,10 +1,9 @@
 <div class='flex-container flex-center'>
   <div id='main-container' class='flex-container flex-column'>
-    <div class="form">
-      <input type="text" name='StartDate)' placeholder='Start Date (d/mm/YYYY)' #startDate>
-      <div class="width-5"></div>
-      <input type="number" placeholder='NumberOfDays' name='Number of Days' #numberOfDays>
-      <div class="width-5"></div>
+    <div class="form flex-container flex-column">
+      <input class="field" type="text" name='StartDate)' placeholder='Start Date (d/mm/YYYY)' #startDate>
+      <input class="field" type="number" placeholder='NumberOfDays' name='Number of Days' #numberOfDays>
+      <input class="field" type="text" placeholder='CountryCode' name='Country Code' #countryCode>
       <button class='primary' (click)='generateCalendar(startDate, numberOfDays)'>Generate Calendar</button>
     </div>
     <div *ngIf="months?.length > 0" class='flex-container'>
