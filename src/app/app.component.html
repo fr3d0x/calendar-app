@@ -1,11 +1,11 @@
 <div class='flex-container flex-center'>
   <div id='main-container' class='flex-container flex-column'>
     <div class="form">
-      <input type="text" name='dateFrom' placeholder='Start Date' #startDate>
+      <input type="text" name='StartDate)' placeholder='Start Date (d/mm/YYYY)' #startDate>
       <div class="width-5"></div>
-      <input type="number" placeholder='To Date' name='Number of Days' #numberOfDays>
+      <input type="number" placeholder='NumberOfDays' name='Number of Days' #numberOfDays>
       <div class="width-5"></div>
-      <button class='primary' (click)='generateCalendar(startDate, numberOfDays)'>Reserve</button>
+      <button class='primary' (click)='generateCalendar(startDate, numberOfDays)'>Generate Calendar</button>
     </div>
     <div *ngIf="months?.length > 0" class='flex-container'>
       <div *ngFor="let wday of wdays">
